@@ -2,7 +2,6 @@ package com.maxprof90.redditarticles.api;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.maxprof90.redditarticles.models.RootReddit;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity{
             adapter = new RedditPostAdapter(this, children);
             Parcelable listState = savedInstanceState.getParcelable(SAVED_RECYCLER_VIEW_STATUS_ID);
             RecyclerView.LayoutManager lll = recyclerView.getLayoutManager();
-            recyclerView.getLayoutManager().onRestoreInstanceState(listState);
+            Objects.requireNonNull(recyclerView.getLayoutManager()).onRestoreInstanceState(listState);
             recyclerView.setAdapter(adapter);
 
         } else if (savedInstanceState == null) {
@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity{
 
         } else {
             before = null;
-            listen.setValue(before);
+            listen.setValue(null);
 
         }
     }

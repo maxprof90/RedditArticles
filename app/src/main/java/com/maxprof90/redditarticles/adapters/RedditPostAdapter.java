@@ -1,6 +1,8 @@
 package com.maxprof90.redditarticles.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.maxprof90.redditarticles.FullScreenViewActivity;
 import com.maxprof90.redditarticles.R;
 import com.maxprof90.redditarticles.models.Children;
 import com.maxprof90.redditarticles.utils.DownloadImageTask;
@@ -54,7 +57,7 @@ public class RedditPostAdapter extends RecyclerView.Adapter<RedditPostAdapter.Vi
             super(itemView);
             authorName = itemView.findViewById(R.id.author);
             createdAt = itemView.findViewById(R.id.publishedAt);
-            commentNum = itemView.findViewById(R.id.source);
+            commentNum = itemView.findViewById(R.id.comments_num);
             thumbIv = itemView.findViewById(R.id.img);
             titleTv = itemView.findViewById(R.id.desc);
 
@@ -83,21 +86,21 @@ public class RedditPostAdapter extends RecyclerView.Adapter<RedditPostAdapter.Vi
             holder.thumbIv.setImageBitmap(children.getData().getThumbBitmap());
         }
 
-//        if (children.getData().getImgURl() != null) {
-//            holder.thumbIv.setOnClickListener((View view) -> {
-//                if (!children.getData().isVideo()) {
-//                    Intent intent = new Intent(context, FullScreenViewActivity.class);
-//                    intent.putExtra("IMG_URL", children.getData().getImgURl());
-//                    context.startActivity(intent);
-//                } else if (children.getData().isVideo()) {
-//
-//                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(children.getData().getImgURl()));
-//                    context.startActivity(browserIntent);
-//
-//                }
-//
-//            });
-//        }
+        if (children.getData().getImgURl() != null) {
+            holder.thumbIv.setOnClickListener((View view) -> {
+                if (!children.getData().isVideo()) {
+                    Intent intent = new Intent(context, FullScreenViewActivity.class);
+                    intent.putExtra("IMG_URL", children.getData().getImgURl());
+                    context.startActivity(intent);
+                } else if (children.getData().isVideo()) {
+
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(children.getData().getImgURl()));
+                    context.startActivity(browserIntent);
+
+                }
+
+            });
+        }
 
     }
 }

@@ -59,7 +59,7 @@ public class RedditPostAdapter extends RecyclerView.Adapter<RedditPostAdapter.Vi
             createdAt = itemView.findViewById(R.id.publishedAt);
             commentNum = itemView.findViewById(R.id.comments_num);
             thumbIv = itemView.findViewById(R.id.img);
-            titleTv = itemView.findViewById(R.id.desc);
+            titleTv = itemView.findViewById(R.id.title);
 
 
         }

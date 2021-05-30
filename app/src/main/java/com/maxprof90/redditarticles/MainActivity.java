@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity{
 
             adapter = new RedditPostAdapter(this, children);
             Parcelable listState = savedInstanceState.getParcelable(SAVED_RECYCLER_VIEW_STATUS_ID);
-            RecyclerView.LayoutManager lll = recyclerView.getLayoutManager();
+           // RecyclerView.LayoutManager lll = recyclerView.getLayoutManager();
             Objects.requireNonNull(recyclerView.getLayoutManager()).onRestoreInstanceState(listState);
             recyclerView.setAdapter(adapter);
 

@@ -13,27 +13,28 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scaleType="fitCenter" />
+
     <ImageView
         android:id="@+id/closeIv"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="113dp"
+        android:background="@drawable/ic_close"
         android:paddingTop="2dp"
         android:paddingBottom="2dp"
-        android:background="@drawable/ic_close"
-        android:textColor="#ffffff"
-        android:text="@string/close" />
+        android:text="@string/close"
+        android:textColor="#ffffff" />
 
     <ImageView
         android:id="@+id/downloadIv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="42dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="166dp"
         android:layout_toStartOf="@+id/closeIv"
         app:srcCompat="@drawable/ic_download" />
 
